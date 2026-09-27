@@ -1,0 +1,35 @@
+                ┌──────────────┐
+                │ PDF Document │
+                └──────┬───────┘
+                       ↓
+                ┌──────────────┐
+                │ Amazon S3    │
+                └──────┬───────┘
+                       ↓
+               ┌───────────────┐
+               │   SageMaker   │
+               │    Notebook   │
+               └───────┬───────┘
+                       ↓
+                PDF Processing
+                       ↓
+                Text Chunking
+                       ↓
+           ┌─────────────────────┐
+           │ Titan Embeddings    │
+           └──────────┬──────────┘
+                      ↓
+               ┌────────────┐
+               │   FAISS    │
+               └─────┬──────┘
+                     ↓
+                Retriever
+                     ↓
+             Relevant Chunks
+                     ↓
+           ┌──────────────────┐
+           │ Amazon Nova Lite │
+           │    Bedrock       │
+           └────────┬─────────┘
+                    ↓
+                Final Answer
