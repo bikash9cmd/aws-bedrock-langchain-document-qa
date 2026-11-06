@@ -80,15 +80,35 @@ The system retrieves the three most relevant chunks from the document.
 
 The retrieved context is provided to Amazon Nova Lite, which generates the final answer.
 
+## Getting Started
+
+### Prerequisites
+
+- An AWS account with Amazon Bedrock access to **Amazon Titan Text Embeddings V2** (`amazon.titan-embed-text-v2:0`) and **Amazon Nova Lite** (`amazon.nova-lite-v1:0`)
+- An S3 bucket holding the PDF you want to query
+- A SageMaker notebook instance or Studio space whose execution role can call Bedrock and read the bucket (or run locally with AWS credentials configured)
+
+### Run it
+
+```bash
+git clone https://github.com/bikash9cmd/aws-bedrock-langchain-document-qa.git
+cd aws-bedrock-langchain-document-qa
+pip install -r requirements.txt
+jupyter notebook aws_bedrock_langchain_document_qa.ipynb
+```
+
+Set `AWS_REGION`, `S3_BUCKET` and `S3_KEY` in the configuration cell, then run the notebook top to bottom. The last cells take a question and print the retrieved chunks and the generated answer.
+
 ## Repository Structure
 
 ```text
 .
-├── document_qa_rag.ipynb
+├── aws_bedrock_langchain_document_qa.ipynb
 ├── README.md
 ├── requirements.txt
 ├── architecture.png
-├── screenshots/
+├── Screenshot/
+├── LICENSE
 └── .gitignore
 ```
 
@@ -107,3 +127,7 @@ The implementation is intended as a prototype and is not presented as a producti
 * Source/document citation in responses
 * Authentication and access control
 * Production API deployment
+
+## License
+
+Released under the [MIT License](LICENSE).
