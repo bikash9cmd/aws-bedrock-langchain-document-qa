@@ -1,5 +1,7 @@
 # AWS Bedrock Document Q&A Bot with LangChain
 
+> **Tech stack:** Python · Amazon Bedrock · LangChain · FAISS · Amazon S3 · SageMaker
+
 A Retrieval-Augmented Generation (RAG) based document question-answering system built using Amazon Bedrock, LangChain, FAISS, Amazon S3 and Amazon SageMaker.
 
 The system processes a PDF document, converts its content into vector embeddings, retrieves the most relevant document chunks for a user query, and uses Amazon Nova Lite to generate an answer based on the retrieved context.
